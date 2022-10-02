@@ -9,7 +9,7 @@
 <body>
     <?php
 
-    echo "Prueba php Laravel";
+    echo "Prueba php Laravel, master";
 
     ?>
 
