@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\RecetaController;
 use Illuminate\Support\Facades\Route;
 //para usar el controlador
 use App\Http\Controllers\HomeControler;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,32 +17,47 @@ use App\Http\Controllers\HomeControler;
 |
 */
 
+
+//Rutas en laravel
+
 //http://localhost/proyectoLaravel/public/
 //Le digo que cuando un usuario ingresa al sito principal quiero que me devuelvas las vista "welcome"
 Route::get('/', HomeControler::class);
+    /* //para laravel 7
+Route::get('/', 'HomeControler') */;
 
 
-//http://localhost/proyectoLaravel/public/cursos
-Route::get('cursos', function () {
-    return "Bienvenido a la pagina cursos";
+//en este metodo solo se aceptan rutas de CursoController
+Route::controller(RecetaController::class)->group(function () {
+    //http://localhost/proyectoPrueba/public/cursos
+    Route::get('recetas', 'index')->name('recetas.index');
+
+    //http://localhost/proyectoPrueba/public/cursos/create
+    Route::get('recetas/create', 'create')->name('recetas.create'); //('nombre url') ->name('name view')
+
+    //ruta que se encaraga de recibir el formulario
+    Route::post('recetas', 'store')->name('recetas.store');
+
+    //http://localhost/proyectoPrueba/public/cursos/5
+    Route::get('recetas/{receta}', 'show')->name('recetas.show');
+
+    //http://localhost/proyectoPrueba/public/cursos/1/edit
+    Route::get('recetas/{receta}/edit', 'edit')->name('recetas.edit');
+
+    //http://localhost/proyectoPrueba/public/cursos/1/update
+    Route::put('recetas/{receta}/update', 'update')->name('recetas.update');
+
+    //ruta para eliminar un curso
+    Route::delete('recetas/{receta}', 'delete')->name('recetas.delete');
 });
 
-
-//http://localhost/proyectoLaravel/public/cursos/create
-Route::get('cursos/create', function () {
-    return "En esta página podrás crear un curso";
-});
-
-
-//al colocar este metodo arriba de http://localhost/proyectoLaravel/public/cursos/create no funcionaria el http://localhost/proyectoLaravel/public/cursos/create
-//http://localhost/proyectoLaravel/public/cursos/java
-/* Route::get('cursos/{curso}', function ($curso) {
-    return "Bienvenido al curso: " . $curso;
-}); */
+//ejemplo de ruta directo sin metodo
+//Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
 
 
 
-Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria) {
+//http://localhost/proyectoPrueba/public/cursos/java/programacion
+/* Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria) {
 
     //esto asi estaria ensuciando el codigo y habria que derivarlo a un controlador
     if($categoria){
@@ -48,7 +65,5 @@ Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria) {
     }else{
         return "Bienvenido al curso: $curso";
     }
-
     
-});
-
+}); */

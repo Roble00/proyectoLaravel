@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+ 
+    //protected $namespace = 'App\Http\Controllers';//laravel 7
+
     /**
      * The path to the "home" route for your application.
      *
@@ -34,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                //->namespace($this->$namespace)//laravel 7
                 ->group(base_path('routes/web.php'));
         });
     }

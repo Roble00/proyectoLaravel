@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 class HomeControler extends Controller
 {
     public function __invoke(){
-        return view('Bienvenido a la pagina principal');
+        //return view('Bienvenido a la pagina principal');
+        //return "Bienvenido a la pagina principal";
+        //return view('welcome');//esta es por defecto
+        return view('home');
     }
 }
