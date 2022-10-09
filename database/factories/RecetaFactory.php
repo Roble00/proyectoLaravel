@@ -32,8 +32,10 @@ class RecetaFactory extends Factory
     {
         return [
             'name'=> $this->faker->sentence(),
+            'categoria' => $this->faker->randomElement(['Guiso', 'Plancha']),
             'ingredientes' => $this->faker->paragraph(),
-            'categoria' => $this->faker->randomElement(['Guiso', 'Plancha'])
+            'preparacion' => $this->faker->paragraph()
+            
         ];
     }
 }

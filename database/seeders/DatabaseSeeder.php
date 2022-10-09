@@ -23,7 +23,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Receta::factory(50)->create();//llamada directa al factory, crea 50 recetas
+        //SE USA PARA HACER TANTOS INSERT COMO QUIERAS EN LAS TABLAS
+
+        //Receta::factory(50)->create();//llamada directa al factory, crea 50 recetas
         //User::factory(10)->create();//uso el UserFactory.php para crear 10 User
     }
 }

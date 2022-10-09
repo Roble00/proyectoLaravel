@@ -18,12 +18,11 @@
             <br>
             <input type="text" name="name">
         </label>
-        <br>
-        <label>
-            Ingredientes:
+        @error('name')
             <br>
-            <textarea name="ingredientes" rows="5"></textarea>
-        </label>
+            <small>*{{$message}}</small> <!-- tambien funciona asi *{{"Campo requerido"}} -->
+            <br>
+        @enderror
         <br>
         <label>
             Categoria:
@@ -31,6 +30,31 @@
             <input type="text" name="categoria">
         </label>
         <br>
+        <label>
+            Ingredientes:
+            <br>
+            <textarea name="ingredientes" rows="5"></textarea>
+        </label>
+        @error('ingredientes')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+        <br>
+        <br>
+        <label>
+            Preparación:
+            <br>
+            <textarea name="preparacion" rows="5"></textarea>
+        </label>
+        @error('preparacion')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+        <br>
         <button type="submit">Guardar receta</button>
     </form>
+    <br>
+    <a href="{{route('recetas.index')}}">Volver a las recetas</a>
 @endsection

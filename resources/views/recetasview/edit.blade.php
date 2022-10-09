@@ -22,17 +22,27 @@
         </label>
         <br>
         <label>
-            Ingredientes:
-            <br>
-            <textarea name="ingredientes" rows="5">{{$receta->ingredientes}}</textarea>
-        </label>
-        <br>
-        <label>
             Categoria:
             <br>
             <input type="text" name="categoria" value="{{$receta->categoria}}">
         </label>
         <br>
+        <label>
+            Ingredientes:
+            <br>
+            <textarea name="ingredientes" rows="5">{{$receta->ingredientes}}</textarea>
+        </label>
+        <br>
+        <br>
+        <label>
+            Preparación:
+            <br>
+            <textarea name="preparacion" rows="5">{{$receta->preparacion}}</textarea>
+        </label>
+        <br>
+
         <button type="submit">Actualizar receta</button>
     </form>
+
+    <a href="{{route('recetas.show', $receta->id)}}">Volver a la receta</a>
 @endsection

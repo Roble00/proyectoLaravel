@@ -18,6 +18,7 @@
         <button type="submit">Eliminar receta</button>
     </form>
 
-    <p><strong>Categoria: </strong>{{$receta->categoria}}</p>
-    <p><strong>Ingredientes: </strong>{{$receta->ingredientes}}</p>
+    <p><strong>Categoria: </strong><br>{{$receta->categoria}}</p>
+    <p><strong>Ingredientes: </strong><br>{{$receta->ingredientes}}</p>
+    <p><strong>Preparación: </strong><br>{{$receta->preparacion}}</p>
 @endsection

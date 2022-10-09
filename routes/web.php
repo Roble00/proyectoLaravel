@@ -27,43 +27,45 @@ Route::get('/', HomeControler::class);
 Route::get('/', 'HomeControler') */;
 
 
-//en este metodo solo se aceptan rutas de CursoController
+//en este metodo solo se aceptan rutas de RecetaController
 Route::controller(RecetaController::class)->group(function () {
-    //http://localhost/proyectoPrueba/public/cursos
-    Route::get('recetas', 'index')->name('recetas.index');
+    
+    //http://localhost/proyectoLaravel/public/recetasview
+    //hace referencia a recetasview y el metodo encargado de admistrar es index, le llamamos como nombre identificativo: metodo name('recetas.index') y este name lo usaremos en el html href="{{route('recetas.create')}}" 
+    Route::get('recetasview', 'index')->name('recetas.index');//('nombre url') ->name('name view')
 
-    //http://localhost/proyectoPrueba/public/cursos/create
-    Route::get('recetas/create', 'create')->name('recetas.create'); //('nombre url') ->name('name view')
+    //http://localhost/proyectoLaravel/public/recetasview/create
+    Route::get('recetasview/create', 'create')->name('recetas.create'); //('nombre url') ->name('name view')
 
     //ruta que se encaraga de recibir el formulario
-    Route::post('recetas', 'store')->name('recetas.store');
+    Route::post('recetasview', 'store')->name('recetas.store');
 
-    //http://localhost/proyectoPrueba/public/cursos/5
-    Route::get('recetas/{receta}', 'show')->name('recetas.show');
+    //http://localhost/proyectoLaravel/public/recetasview/5
+    Route::get('recetasview/{receta}', 'show')->name('recetas.show');
 
-    //http://localhost/proyectoPrueba/public/cursos/1/edit
-    Route::get('recetas/{receta}/edit', 'edit')->name('recetas.edit');
+    //http://localhost/proyectoLaravel/public/recetasview/1/edit
+    Route::get('recetasview/{receta}/edit', 'edit')->name('recetas.edit');
 
-    //http://localhost/proyectoPrueba/public/cursos/1/update
-    Route::put('recetas/{receta}/update', 'update')->name('recetas.update');
+    //http://localhost/proyectoLaravel/public/recetasview/1/update
+    Route::put('recetasview/{receta}/update', 'update')->name('recetas.update');
 
     //ruta para eliminar un curso
-    Route::delete('recetas/{receta}', 'delete')->name('recetas.delete');
+    Route::delete('recetasview/{receta}', 'delete')->name('recetas.delete');
 });
 
 //ejemplo de ruta directo sin metodo
-//Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
+//Route::post('recetas', [RecetaController::class, 'store'])->name('recetas.store');
 
 
 
-//http://localhost/proyectoPrueba/public/cursos/java/programacion
-/* Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria) {
+//http://localhost/proyectoLaravel/public/recetas/pruebarecta/receta
+/* Route::get('recetas/{receta}/{categoria}', function ($receta, $categoria) {
 
     //esto asi estaria ensuciando el codigo y habria que derivarlo a un controlador
     if($categoria){
-        return "Bienvenido al curso: $curso, de la categoria $categoria";
+        return "Bienvenido a la receta: $receta, de la categoria $categoria";
     }else{
-        return "Bienvenido al curso: $curso";
+        return "Bienvenido a la receta: $receta";
     }
     
 }); */
