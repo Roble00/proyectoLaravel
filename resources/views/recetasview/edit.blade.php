@@ -3,6 +3,10 @@
 @section('title', 'Recetas edit')
 
 @section('content')
+
+    <!-- bootstrap -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     <h1>En esta pagina podras editar una receta</h1>
 
     <!-- para ver el resultado de route = http://localhost/proyectoPrueba/public/cursos -->

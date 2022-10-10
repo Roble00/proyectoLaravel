@@ -13,5 +13,8 @@ class HomeControler extends Controller
         //return "Bienvenido a la pagina principal";
         //return view('welcome');//esta es por defecto
         return view('home');
+        
+        
+        //return view('prueba');//prueba bootstrap
     }
 }

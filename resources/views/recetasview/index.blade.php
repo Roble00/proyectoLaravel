@@ -3,6 +3,10 @@
 @section('title', 'Cursos')
 
 @section('content')
+
+    <!-- bootstrap -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     <h1>Pagina principal de recetas</h1>
     <a href="{{route('recetas.create')}}">Crear receta</a>
     <ul>

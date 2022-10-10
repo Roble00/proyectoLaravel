@@ -3,6 +3,10 @@
 @section('title', $receta->name)
 
 @section('content')
+
+    <!-- bootstrap -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     <h1>Esta es la receta: {{$receta->name}}</h1>
     
     <a href="{{route('recetas.index')}}">Volver a las recetas</a>
