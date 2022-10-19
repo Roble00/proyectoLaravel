@@ -7,7 +7,7 @@ use App\Models\Receta;
 
 class RecetaController extends Controller
 {
-    //metodo para mostrar la pagina principal
+    //metodo para mostrar la pagina principal......
     public function index()
     {
         $recetas = Receta::orderBy('id', 'desc')->paginate(); //para capturar todas las recetas de la BBDD por paginas ordenado por id con orden descendente, asi mostramos las nuevos los primeros
