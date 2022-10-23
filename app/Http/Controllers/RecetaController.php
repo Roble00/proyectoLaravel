@@ -14,6 +14,7 @@ class RecetaController extends Controller
         return view('recetasview.index', compact('recetas')); //se posiciona en la carpeta view()
     }
 
+    //este metodo es el create
 
     //metodo para mostrar el formulario para crear una receta
     public function create()
