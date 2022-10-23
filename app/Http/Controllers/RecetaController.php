@@ -11,6 +11,8 @@ class RecetaController extends Controller
     //prueba feature/#3
     //prueba feature/#3
     //prueba feature/#3
+        //prueba feature/#3
+    //prueba feature/#3
     public function index()
     {
         $recetas = Receta::orderBy('id', 'desc')->paginate(); //para capturar todas las recetas de la BBDD por paginas ordenado por id con orden descendente, asi mostramos las nuevos los primeros
