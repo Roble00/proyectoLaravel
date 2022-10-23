@@ -16,6 +16,9 @@ class RecetaController extends Controller
            //prueba feature/#3
     //prueba feature/#3
       //prueba featur
+      //prueba feature/#3
+    //prueba feature/#3
+      //prueba featur
 
     public function index()
     {
